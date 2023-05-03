@@ -37,8 +37,12 @@ class ProductController extends Controller
             'prix'=>'required|numeric',
             'bio'=>'required',
             'stock'=>'required',
+            'image'=>'image|mimes:png,jpg,jpeg,svg',
         ]);
         // dd($formFildes);
+        if($request->hasFile('image')){
+            $formFildes['image']= $request->file('image')->store('profile','public');
+        }
         product::create($formFildes);
         return to_route('products.index')->with('success','product is added');
         

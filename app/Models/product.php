@@ -13,5 +13,10 @@ class product extends Model
         'prix',
         'bio',
         'stock',
+        'image',
     ];
+
+    public function getImageAttribute($value){
+        return $value??'product/product.jpg';
+}
 }

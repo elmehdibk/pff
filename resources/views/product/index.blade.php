@@ -14,7 +14,7 @@
         <div class="container">
        
         <div class="card">
-            <img class="card-img-top  " src="https://picsum.photos/id/237/200/300" alt="Title">
+            <img class="card-img-top  " src="{{asset('storage/'.$product->image)}}" alt="Title">
             <div class="card-body">
                 <h4 class="card-title">{{$product->product_name}}</h4>
                 <h6 class="card-text text-success">{{$product->prix}}DH</h6>
