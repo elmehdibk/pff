@@ -41,7 +41,7 @@ class ProductController extends Controller
         ]);
         // dd($formFildes);
         if($request->hasFile('image')){
-            $formFildes['image']= $request->file('image')->store('profile','public');
+            $formFildes['image']= $request->file('image')->store('product','public');
         }
         product::create($formFildes);
         return to_route('products.index')->with('success','product is added');
