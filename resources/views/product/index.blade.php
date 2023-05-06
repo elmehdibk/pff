@@ -29,6 +29,12 @@
                     
                     <p>{{$product->bio}}</p>
                 </div>
+                <div class="mt-3">
+                    <a name="" id="" class="btn btn-info" href="{{route('products.show',$product->id)}}" role="button">Show</a>
+                    <a name="" id="" class="btn btn-warning" href="#" role="button">Update</a>
+                    <a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a>
+                </div>
+
             </div>
         </div>
     </div>
