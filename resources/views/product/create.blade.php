@@ -41,6 +41,22 @@
           </div>
 
           <div class="mb-3">
+            <label for="" class="form-label">Type of this product</label>
+            <select class="form-select form-select-lg" name="type" >
+                <option selected>Gainer</option>
+                <option >Whey</option>
+                <option >BCAA</option>
+                <option >EAA</option>
+                <option >Creatine</option>
+                <option >Pre-Workout</option>
+                <option >Protein Bar</option>
+                <option >Shakers</option>
+                <option >Other Products</option>
+                
+            </select>
+          </div>
+
+          <div class="mb-3">
             <label for="" class="form-label">This product is</label>
             <select class="form-select form-select-lg" name="stock" >
                 <option selected>Available</option>

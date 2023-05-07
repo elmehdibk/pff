@@ -14,6 +14,7 @@ class product extends Model
         'bio',
         'stock',
         'image',
+        'type',
     ];
 
     public function getImageAttribute($value){
