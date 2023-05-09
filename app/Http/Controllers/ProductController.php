@@ -38,6 +38,7 @@ class ProductController extends Controller
             'bio'=>'required',
             'stock'=>'required',
             'image'=>'image|mimes:png,jpg,jpeg,svg',
+            'type'=>'required',
         ]);
         // dd($formFildes);
         if($request->hasFile('image')){
@@ -53,7 +54,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        return view('product.show',compact('product'));
     }
 
     /**
@@ -61,7 +62,7 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        //
+        return view('product.edit',compact('product'));
     }
 
     /**
@@ -69,7 +70,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        $formFildes=$request->validate([
+            'product_name'=>'required',
+            'prix'=>'required|numeric',
+            'bio'=>'required',
+            'stock'=>'required',
+            'image'=>'image|mimes:png,jpg,jpeg,svg',
+            'type'=>'required',
+        ]);
+        // dd($formFildes);
+        if($request->hasFile('image')){
+            $formFildes['image']= $request->file('image')->store('product','public');
+        }
+        $product->fill($formFildes)->save();
+        return to_route('products.index',$product->id)->with('success','product is updated');
+
     }
 
     /**
@@ -77,6 +92,7 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+        $product->delete();
+        return to_route('products.index')->with('success','this product '.'"'.$product->product_name.'"'.' is deleted');
     }
 }

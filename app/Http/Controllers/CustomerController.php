@@ -13,8 +13,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer=product::all();
-        return view('customer.index',compact('customer'));
+        $products=product::all();
+        return view('customer.index',compact('products'));
     }
 
     /**
