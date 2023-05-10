@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('page')
+    Update
+@endsection
 @section('content')
     <form action="{{route('products.update',$product->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -28,6 +31,16 @@
           <div class="mb-3">
             <label for="" class="form-label">Price</label>
             <input type="text" class="form-control" value="{{old('prix',$product->prix)}}" name="prix" >
+          </div>
+
+          @error('old_prix')
+              
+          <p class="alert-heading text-danger">{{$message}}</p>
+
+    @enderror
+          <div class="mb-3">
+            <label for="" class="form-label">Old Price</label>
+            <input type="text" class="form-control" value="{{old('old_prix',$product->old_prix)}}" name="old_prix" >
           </div>
 
           @error('bio')
