@@ -48,11 +48,11 @@
 
                     <td>
                         <div class="m-3">
-                            <a name="" id="" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
-                            <form  action="{{route('products.destroy',$product->id)}}" method="post">
+                            <a name="" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
+                            <form id="button"  action="{{route('products.destroy',$product->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" >Delete</button>
                                 
                             </form>
                         </div>
