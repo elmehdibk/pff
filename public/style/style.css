@@ -1,0 +1,46 @@
+#cardsSize{
+    width:250px;
+    margin: -25px;
+    margin-top:5px;
+    margin-left: 1%;
+   float: left;
+   
+    
+}
+#button{
+  
+    display: inline-table;
+   
+}
+@media screen and (max-width: 600px){
+    #cardsSize{
+        width:180px;
+        float: left;
+       
+        
+    }
+    #button{
+      
+        display: inline-table;
+       
+    }   
+}
+@media screen and (max-width: 600px){
+    #cardsSize{
+        width:180px;
+       
+       
+        
+    }
+    #button{
+      
+        display: inline-table;
+       
+    }   
+}
+.card{
+    margin-top: 60px;
+}
+.alert{
+    margin-top: 60px;
+}

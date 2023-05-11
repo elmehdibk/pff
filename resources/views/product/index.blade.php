@@ -11,27 +11,35 @@
     
     
 @endif    
-<div class="container container-sm ">
-    <div class="row">
+
+   
+
+    <div class="row  d-flex align-content-start flex-wrap ">
     @foreach ($products as $product)    
-    <div class="col-4">
-            <div class="container">
+    <div class="col" >
+            <div class="container" id="cardsSize" >
            
-            <div class="card card-sm m-3">
+            <div class="card card-sm " >
                 @if ($product->old_prix>$product->prix) 
                 <div class="position-relative">
-                    <img class="card-img-top" src="{{asset('storage/'.$product->image)}}" alt="Title">
-                    <h4 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger " style="font-size: 120%">SOLD</h4>
-                </div>
+                    <img class="card-img-top"  src="{{asset('storage/'.$product->image)}}" alt="Title">
+                    <h4 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger " style="font-size:12px;">SOLD</h4>
+            </div>
                 
-                    
+
                 @else
                 <img class="card-img-top" src="{{asset('storage/'.$product->image)}}" alt="Title">
                 
                 @endif
+
                 <div class="card-body">
                     <h4 class="card-title">{{$product->product_name}}</h4>
                     <h6 class="card-text text-success fs-5">{{$product->prix}}DH</h6>
+                    
+                    @if ($product->old_prix)
+                    <i class="card-text text-secondary" style="text-decoration:line-through;">{{$product->old_prix}}DH</i>
+                    @endif
+
                     <ul class="p-3">
                         @if ($product->stock=='Available')    
                         <li class="text-success">{{$product->stock}}</li>
@@ -43,15 +51,15 @@
                         
                         <p>{{$product->bio}}</p>
                     </div>
-                    <div class="mt-3 ">
-                        <a name="" id="" class="btn btn-info btn-sm" href="{{route('products.show',$product->id)}}" role="button">Show</a>
-                        <a name="" id="" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
+                    <div class="mt-3 " >
+                        <a name="" id="buttons" class="btn btn-info btn-sm" href="{{route('products.show',$product->id)}}" role="button">Show</a>
+                        <a name="" id="buttons" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
                         
-                        <div style="display: inline-table;">
+                        <div id="button">
                             <form action="{{route('products.destroy',$product->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" id="">Delete</button>
                                 
                             </form>
                         
@@ -64,5 +72,5 @@
     </div>
     @endforeach
     </div>
-</div>
+
 @endsection
