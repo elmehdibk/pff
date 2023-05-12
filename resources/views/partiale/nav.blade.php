@@ -5,7 +5,7 @@
 
     <ul class="navbar-nav me-auto" >
         <li class="nav-item ">
-            <a  class="nav-link " href="/" >
+            <a  class="nav-link " href="/home" >
                home
             </a>
         </li>
