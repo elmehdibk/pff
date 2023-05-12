@@ -1,0 +1,58 @@
+#cardsSize{
+    width:250px;
+    margin: -25px;
+    margin-top:5px;
+    margin-left: 1%;
+    float: left;
+   
+    
+}
+#button{
+  
+    display: inline-table;
+   
+}
+@media screen and (max-width: 600px){
+    #cardsSize{
+        width:180px;
+        float: left;
+        
+    }
+    #button{
+      
+        margin-top:2px;
+       
+    }   
+}
+@media screen and (max-width: 600px){
+    #cardsSize{
+        width:180px;
+       
+       
+        
+    }
+    #button{
+      
+        display: inline-table;
+       
+    }   
+}
+.card{
+    margin-top: 60px;
+}
+.alert{
+    margin-top: 60px;
+}
+
+svg{
+    width:50px;
+    height: 40px;
+    border-radius: 70%;
+    box-shadow:2px 5px 12px  black;
+}
+
+#logo{
+    display: inline; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow:2px 4px 14px  black;
+}

@@ -35,6 +35,7 @@ class ProductController extends Controller
         $formFildes=$request->validate([
             'product_name'=>'required',
             'prix'=>'required|numeric',
+            'old_prix'=>'numeric|nullable',
             'bio'=>'required',
             'stock'=>'required',
             'image'=>'image|mimes:png,jpg,jpeg,svg',
@@ -73,6 +74,7 @@ class ProductController extends Controller
         $formFildes=$request->validate([
             'product_name'=>'required',
             'prix'=>'required|numeric',
+            'old_prix'=>'numeric|nullable',
             'bio'=>'required',
             'stock'=>'required',
             'image'=>'image|mimes:png,jpg,jpeg,svg',

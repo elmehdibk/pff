@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name',70);
             $table->float('prix');
+            $table->float('old_prix')->nullable();
             $table->text('bio',150)->nullable();
             $table->timestamps();
         });
