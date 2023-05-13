@@ -35,7 +35,7 @@
 
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                  <img src="{{asset('storage/product/stronger_nutrition.jpeg')}}" class="img-fluid rounded-top w-25" alt="">
+                  <img src="{{asset('storage/product/stronger_nutrition.jpeg')}}" class="img-fluid rounded-top w-25" id="pic" alt="">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">

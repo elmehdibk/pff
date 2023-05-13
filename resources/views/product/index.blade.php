@@ -19,7 +19,7 @@
     <div class="col" >
             <div class="container" id="cardsSize" >
            
-            <div class="card card-sm " >
+            <div class="card card-sm " id="product" >
                 @if ($product->old_prix>$product->prix) 
                 <div class="position-relative">
                     <img class="card-img-top"  src="{{asset('storage/'.$product->image)}}" alt="Title">
