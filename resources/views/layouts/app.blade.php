@@ -35,13 +35,13 @@
             </div>
               
 
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                   <img src="{{asset('storage/product/stronger_nutrition.jpeg')}}" class="img-fluid rounded-top w-25" id="pic" alt="">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <ul class="navbar-nav ms-auto">
+                  <ul class="navbar-nav ms-auto" id="drop" >
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -64,6 +64,38 @@
                                 <a class="dropdown-item" href="{{ route('gainers.index') }}"
                                 >
                                 Gainer
+                                </a>
+                                <a class="dropdown-item" href="{{ route('wheys.index') }}"
+                                >
+                                Whey
+                                </a>
+                                <a class="dropdown-item" href="{{ route('bcaas.index') }}"
+                                >
+                                BCAA
+                                </a>
+                                <a class="dropdown-item" href="{{ route('eaas.index') }}"
+                                >
+                                EAA
+                                </a>
+                                <a class="dropdown-item" href="{{ route('creatines.index') }}"
+                                >
+                                Creatine
+                                </a>
+                                <a class="dropdown-item" href="{{ route('preWorkouts.index') }}"
+                                >
+                                Pre-Workout
+                                </a>
+                                <a class="dropdown-item" href="{{ route('proteinBars.index') }}"
+                                >
+                                Protein Bar
+                                </a>
+                                <a class="dropdown-item" href="{{ route('shakers.index') }}"
+                                >
+                                Shakers
+                                </a>
+                                <a class="dropdown-item" href="{{ route('others.index') }}"
+                                >
+                                Other Products
                                 </a>
                             </div>
                         </li>

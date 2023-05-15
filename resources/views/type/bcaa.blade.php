@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('page')
-    Gainer
+    Bcaa
 @endsection
 @section('content')
 <div class="alert alert-info text-center" role="alert">
-    <h1><strong>GAINERS</strong></h1>
+    <h1><strong>BCAA</strong></h1>
 </div>
 
     <div class="table-responsive">
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 @foreach ($products as $product)
-                @if ($product->type=='Gainer')    
+                @if ($product->type=='BCAA')    
                 <tr class="">
                     <td scope="row">
                     
@@ -34,7 +34,8 @@
                      
                          
                      @else
-                     <img style="object-fit: contain; width:50px" src="{{asset('storage/'.$product->image)}}" width="90px" height="90px"  alt="image desc">
+                     {{-- <img style="object-fit: contain; width:50px" src="{{asset('storage/'.$product->image)}}" width="90px" height="90px"  alt="image desc"> --}}
+                     <img style="object-fit: contain; width:50px" src="{{asset('storage/'.$product->image)}}" width="90px" height="50px"  alt="image desc">
                      
                      @endif
                     </td>
@@ -47,12 +48,12 @@
                     </td>
 
                     <td>
-                        <div class="m-3">
+                        <div class="">
                             <a name="" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
                             <form id="button"  action="{{route('products.destroy',$product->id)}}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm  " >Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm " >Delete</button>
                                 
                             </form>
                         </div>
