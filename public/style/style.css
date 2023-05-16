@@ -1,3 +1,7 @@
+body{
+    width: 100vw;
+    overflow-x: hidden;
+}
 #cardsSize{
     width:250px;
     margin: -25px;
@@ -29,10 +33,14 @@ a:hover{
 }
 
 @media screen and (max-width: 600px){
+    /* body{
+        width: 120vw;
+        overflow-x: hidden;
+    } */
     #cardsSize{
         width:180px;
         float: left;
-        
+
     }
     #button{
       
@@ -41,6 +49,11 @@ a:hover{
     }   
 }
 @media screen and (max-width: 600px){
+    body{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    
     #cardsSize{
         width:180px;
        
@@ -57,13 +70,12 @@ a:hover{
     margin-top: 60px;    
 }
 #product{
-    /* box-shadow:1px 1px 9px  red; */
     border:1px solid red;
     width:100%;
-    transition:1s;
+    transition:0.5s;
 }
 #product:hover{
-    width:110%;
+    width:106%;
     margin-top: 60px;
     box-shadow:1px 1px 20px  red;
 }
@@ -84,7 +96,7 @@ svg{
 #logo{
     display: inline; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow:1px 1px 6px  red;
+    text-shadow:1px 1px 6px  rgba(249, 44, 44, 0.581);
     font-weight: bold;
 }
 
