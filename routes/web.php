@@ -30,3 +30,5 @@ Route::resource('customers',CustomerController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('add-to-cart/{id}', [CustomerController::class, 'addToCart'])->name('add-to-cart');
