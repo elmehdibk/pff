@@ -11,13 +11,16 @@
     
     
 @endif    
-
+<div class="col-4      ">
+    
+</div>
    
-
-    <div class="row  d-flex align-content-start flex-wrap ">
+<div class="container">
+    
+    <div class="row" id="allCards">
     @foreach ($products as $product)    
-    <div class="col" >
-            <div class="container" id="cardsSize" >
+    <div class="col-sm-6 col-lg-4 col-md-4 col-xl-3 col-xxl-3    " >
+            {{-- <div class="container" id="cardsSize" > --}}
            
             <div class="card card-sm " id="product" >
                 @if ($product->old_prix>$product->prix) 
@@ -55,22 +58,27 @@
                         <a name="" id="buttons" class="btn btn-info btn-sm" href="{{route('products.show',$product->id)}}" role="button">Show</a>
                         <a name="" id="buttons" class="btn btn-warning btn-sm" href="{{route('products.edit',$product->id)}}"  role="button">Update</a>
                         
-                        <div id="button">
-                            <form action="{{route('products.destroy',$product->id)}}" method="post">
+                        
+                        
+                        
+                        
+                        {{-- </div> --}}
+                        
+                        <div style="display:inline-table;" >
+    
+                            <form action="{{route('products.destroy',$product->id)}}" method="post" >
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm" id="">Delete</button>
-                                
-                            </form>
-                        
-                    </div>
+                              
+                                 <button type="submit" class="btn btn-danger btn-sm" id="delete">Delete</button>
+                                </form>
                         </div>
-    
-                </div>
+                    </div>
             </div>
         </div>
     </div>
     @endforeach
     </div>
+</div>
 
 @endsection

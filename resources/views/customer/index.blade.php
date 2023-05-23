@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
  
+
+
 <div class="row">
+    <div class="alert alert-secondary mt-5 text-center" role="alert">
+        <strong>welcom {{auth()->user()->name}}</strong>
+    </div>
+        
+  
 @foreach ($customers as $customer)
     
 

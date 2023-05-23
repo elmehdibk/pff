@@ -18,7 +18,7 @@
     <script src="{{asset('script/script.js')}}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="">
     <div id="app">
         <nav class="navbar bg-body-tertiary bg-light bg-gradient shadow-sm  fixed-top">
             <div class="container-fluid">
