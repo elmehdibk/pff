@@ -54,7 +54,7 @@ class ProductController extends Controller
             $formFildes['image']= $request->file('image')->store('product','public');
         }
         product::create($formFildes);
-        return to_route('products.index')->with('success','product is added');
+        return to_route('products.create')->with('success','product is added');
         
     }
 

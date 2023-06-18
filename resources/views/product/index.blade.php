@@ -3,14 +3,7 @@
     Index
 @endsection
 @section('content')
-@if (session()->has('success'))
-
-    <div class="alert alert-success" role="alert">
-        <strong>{{session('success')}}</strong>
-    </div>
-    
-    
-@endif    
+ 
 
    
 <div class="container">
@@ -32,7 +25,9 @@
                     <a href="{{route('products.index','Shakers')}}" class="list-group-item list-group-item-action ">Shakers</a>
                     <a href="{{route('products.index','Other Products')}}" class="list-group-item list-group-item-action ">Other Products</a>
                     
-                    
+                    <div class="card-footer text-muted">
+                        <a href="{{route('products.index')}}" class="list-group-item list-group-item-action ">All</a>
+                    </div>
                 </div>
             </div>
             
