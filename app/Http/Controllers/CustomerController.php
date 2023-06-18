@@ -36,11 +36,32 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Customer $customer)
+    public function show(product $customer)
     {
-        //
+        return view('customer.show',compact('customer'));
     }
 
+    public function addToCart($id)
+    {
+        $product = product::findOrFail($id);
+ 
+        $cart = session()->get('cart', []);
+ 
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++; 
+        }  else {
+            $cart[$id] = [
+                'product_name' => $product->product_name,
+                'image' => $product->photo,
+                'prix' => $product->price,
+                "quantity" => 1
+            ];
+       
+        }
+ 
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product add to cart successfully!');
+    }
     /**
      * Show the form for editing the specified resource.
      */

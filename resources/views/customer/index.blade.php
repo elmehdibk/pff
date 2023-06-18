@@ -1,40 +1,57 @@
+
 @extends('layouts.app')
 @section('content')
  
 
+@if(session('success'))
+         <div class="alert alert-success">
+           {{ session('success') }}
+         </div> 
+@endif
 
-<div class="row">
-    <div class="alert alert-secondary mt-5 text-center" role="alert">
-        <strong>welcom {{auth()->user()->name}}</strong>
-    </div>
-        
-  
-@foreach ($customers as $customer)
-    
+<div class="text-center container py-5">
+      <h4 class="mt-4 mb-5"><strong>PRODUITS POPULAIRES</strong></h4>
+      <div class="container">
+      <div class="row">
+        @foreach ($customers as $product)
+        <div class="col-4">
+          <div class="card">
+            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+             data-mdb-ripple-color="light">
+              <img src="{{asset('storage/'.$product->image)}}"
+                class="w-100" />
+              <a href="{{route('customers.show',$product->id)}}">
 
-<div class="col-4">
-        <div class="container">
-       
-        <div class="card">
-            <img class="card-img-top  " src="{{asset('storage/'.$customer->image)}}" alt="Title">
-            <div class="card-body">
-                <h4 class="card-title">{{$customer->product_name}}</h4>
-                <h6 class="card-text text-success">{{$customer->prix}}DH</h6>
-                <ul class="p-3">
-                    @if ($customer->stock=='Available')    
-                    <li class="text-success">{{$customer->stock}}</li>
-                    @else
-                    <li class="text-danger">{{$customer->stock}}</li>
-                    @endif
-                </ul>
-                <div class="card-footer text-muted">
-                    
-                    <p>{{$customer->bio}}</p>
+                <div class="mask">
+                  <div class="d-flex justify-content-start align-items-end h-100">
+                    <h5>
+                      @if ($product->stock=='Available')    
+                      <span class="badge bg-success ms-2">{{$product->stock}}</span></h5>
+                @else
+                <span class="badge bg-danger ms-2">{{$product->stock}}</span></h5>
+                @endif
+                  </div>
+
                 </div>
+
+                <div class="hover-overlay">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+
+              </a>
             </div>
+            <div class="card-body">
+              <a href="" class="text-reset">
+                <h5 class="card-title mb-3">{{$product->product_name}}</h5>
+              </a>
+              <a href="" class="text-reset">
+                <p>{{$product->type}}</p>
+              </a>
+              <h6 class="mb-3">{{$product->prix}}DH</h6>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-@endforeach
-</div>
-@endsection
+        @endforeach
+      </div> 
+     </div> 
+     @endsection

@@ -3,7 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Scripts -->
+    {{-- <script src="{{asset('script/script.js')}}"></script> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -14,8 +20,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('style/style.css')}}">
-    <!-- Scripts -->
-    <script src="{{asset('script/script.js')}}"></script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="">
@@ -60,49 +65,7 @@
                             
                         @if (auth()->user()->is_admin===1)
                             
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Select
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('gainers.index') }}"
-                                >
-                                Gainer
-                                </a>
-                                <a class="dropdown-item" href="{{ route('wheys.index') }}"
-                                >
-                                Whey
-                                </a>
-                                <a class="dropdown-item" href="{{ route('bcaas.index') }}"
-                                >
-                                BCAA
-                                </a>
-                                <a class="dropdown-item" href="{{ route('eaas.index') }}"
-                                >
-                                EAA
-                                </a>
-                                <a class="dropdown-item" href="{{ route('creatines.index') }}"
-                                >
-                                Creatine
-                                </a>
-                                <a class="dropdown-item" href="{{ route('preWorkouts.index') }}"
-                                >
-                                Pre-Workout
-                                </a>
-                                <a class="dropdown-item" href="{{ route('proteinBars.index') }}"
-                                >
-                                Protein Bar
-                                </a>
-                                <a class="dropdown-item" href="{{ route('shakers.index') }}"
-                                >
-                                Shakers
-                                </a>
-                                <a class="dropdown-item" href="{{ route('others.index') }}"
-                                >
-                                Other Products
-                                </a>
-                            </div>
-                        </li>
+                       
                         <li class="nav-item ">
                             <a  class="nav-link " href="{{route('products.index')}}" >
                                 Products

@@ -10,9 +10,17 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($type=null)
     {
-        $products=product::all();
+        $products=array();
+        if($type==null){
+            $products=product::all();
+        }
+        else{
+
+            $products=product::where('type','=', $type)->get();
+        }
+        
         return view('product.index',compact('products'));
     }
 

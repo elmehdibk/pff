@@ -29,19 +29,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products',ProductController::class);
-Route::resource('gainers',GainerController::class);
-Route::resource('wheys',wheyController::class);
-Route::resource('bcaas',bcaaController::class);
-Route::resource('eaas',eaaController::class);
-Route::resource('creatines',creatineController::class);
-Route::resource('proteinBars',proteinBarController::class);
-Route::resource('preWorkouts',preWorkoutController::class);
-Route::resource('shakers',shakerController::class);
-Route::resource('others',otherController::class);
+// Route::resource('products',ProductController::class);
+Route::get('/products/{type?}',[ProductController::class,'index'])->name('products.index');
+Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
+Route::post('/products/store',[ProductController::class,'store'])->name('products.store');
+Route::get('/products/{product}',[ProductController::class,'show'])->name('products.show');
+Route::get('/products/{product}/edit',[ProductController::class,'edit'])->name('products.edit');
+Route::put('/products/{product}',[ProductController::class,'update'])->name('products.update');
+Route::delete('/products/{product}',[ProductController::class,'destroy'])->name('products.destroy');
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::resource('customers',CustomerController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('add-to-cart/{id}', [CustomerController::class, 'addToCart'])->name('add-to-cart');

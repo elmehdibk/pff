@@ -11,12 +11,34 @@
     
     
 @endif    
-<div class="col-4      ">
-    
-</div>
+
    
 <div class="container">
-    
+    <div class="card text-start">
+        <div class="card">
+            <div class="card-header">
+                <h4>FILTER</h4>
+            </div>
+            <div class="card-body">
+              
+                <div class="list-group">
+                    <a href="{{route('products.index','Gainer')}}" class="list-group-item list-group-item-action ">Gainer</a>
+                    <a href="{{route('products.index','Whey')}}" class="list-group-item list-group-item-action ">Whey</a>
+                    <a href="{{route('products.index','BCAA')}}" class="list-group-item list-group-item-action ">BCAA</a>
+                    <a href="{{route('products.index','EAA')}}" class="list-group-item list-group-item-action ">EAA</a>
+                    <a href="{{route('products.index','Creatine')}}" class="list-group-item list-group-item-action ">Creatine</a>
+                    <a href="{{route('products.index','Pre-Workout')}}" class="list-group-item list-group-item-action ">Pre-Workout</a>
+                    <a href="{{route('products.index','Protein Bar')}}" class="list-group-item list-group-item-action ">Protein Bar</a>
+                    <a href="{{route('products.index','Shakers')}}" class="list-group-item list-group-item-action ">Shakers</a>
+                    <a href="{{route('products.index','Other Products')}}" class="list-group-item list-group-item-action ">Other Products</a>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+      
+    </div>
     <div class="row" id="allCards">
     @foreach ($products as $product)    
     <div class="col-sm-6 col-lg-4 col-md-4 col-xl-3 col-xxl-3    " >
