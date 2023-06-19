@@ -68,16 +68,19 @@
                        
                         <li class="nav-item ">
                             <a  class="nav-link " href="{{route('products.index')}}" >
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                 Products
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a  class="nav-link " href="{{route('products.create')}}" >
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                 Add Product
                             </a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -87,6 +90,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>
 
