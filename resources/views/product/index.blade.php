@@ -3,7 +3,15 @@
     Index
 @endsection
 @section('content')
-
+@if (session()->has('success'))
+<div class="container-sm">
+    <div class="alert alert-success" role="alert">
+        <strong>{{session('success')}}</strong>
+    </div>
+</div>
+    
+    
+@endif   
 
    
 <div class="container-sm">
@@ -69,9 +77,10 @@
                             
                             <button type="submit" class="btn btn-danger btn-sm" id="delete">Delete</button>
                         </form> --}}
-                        <a onclick=""  href="{{ route('products.destroy', ['id' => $product->id]) }}" class="btn btn-light btn-sm">
+                        {{-- <a  href="{{ route('products.destroy', ['id' => $product->id]) }}" class="btn btn-light btn-sm">
                             <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a>
+                        </a> --}}
+                        <a  id="buttons" class="btn btn-light btn-sm" href="{{route('products.verification',$product->id)}}"  role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         <a  id="buttons" class="btn btn-light btn-sm" href="{{route('products.edit',$product->id)}}"  role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     </td>
                 </tr>

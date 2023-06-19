@@ -50,8 +50,10 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
+                            
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link"  href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ __('Login') }} </a>
+                                    
                                 </li>
                             @endif
 

@@ -100,6 +100,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+        public function verification(product $product){
+                return view('product.verification',compact('product'));
+        } 
+
     public function destroy($id)
     {
         $product=product::find($id);
