@@ -14,8 +14,8 @@ class cartController extends Controller
         return view('cart.index',compact('items'));
     }
     public function addProductToCart(Request $request ,product $product){
-
-        \Cart::add(array(
+        $cart = session()->get('cart', []);
+       $cart[]=\Cart::add(array(
             "id" => $product->id,
             "name" => $product->product_name,
             "price" => $product->prix,

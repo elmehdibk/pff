@@ -156,4 +156,7 @@
         </main>
     </div>
 </body>
+<footer>
+    @include('partiale.footer')
+</footer>
 </html>

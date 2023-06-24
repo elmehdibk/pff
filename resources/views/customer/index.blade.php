@@ -10,7 +10,7 @@
 @endif
 
 <div class="text-center container py-5">
-  @include('partiale/navbar')
+  @include('partiale/nav')
       <h4 class="mt-4 mb-5"><strong>NOUVEAUTÉS</strong></h4>
       <div class="container">
       <div class="row">
