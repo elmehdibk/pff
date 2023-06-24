@@ -1,16 +1,8 @@
 <?php
 
-use App\Http\Controllers\bcaaController;
-use App\Http\Controllers\creatineController;
+
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\eaaController;
-use App\Http\Controllers\GainerController;
-use App\Http\Controllers\otherController;
-use App\Http\Controllers\preWorkoutController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\proteinBarController;
-use App\Http\Controllers\shakerController;
-use App\Http\Controllers\wheyController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
