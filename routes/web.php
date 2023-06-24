@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\cartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\GainerController;
 use App\Http\Controllers\ProductController;
@@ -31,4 +32,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('add-to-cart/{id}', [CustomerController::class, 'addToCart'])->name('add-to-cart');
+
+Route::get('/cart',[cartController::class,'index'])->name('cart.index');
+Route::post('/add/cart/{product}', [cartController::class,'addProductToCart'])->name('add.cart');
+Route::delete('/remove/{product}/cart', [cartController::class,'removeProductFromCart'])->name('remove.cart');
+Route::put('/update/{product}/cart', [cartController::class,'updateProductOnCart'])->name('update.cart');
+
+Route::post('/order', [cartController::class,'getOrder'])->name('getOrder');

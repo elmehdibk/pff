@@ -18,6 +18,9 @@ return new class extends Migration
             $table->float('old_prix')->nullable();
             $table->text('bio',150)->nullable();
             $table->timestamps();
+
+            
+            
         });
     }
 

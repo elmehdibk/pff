@@ -14,9 +14,8 @@
                       <div class="mb-3">
                         <label for="" class="form-label">Post a picture of the product</label>  
                         <input type="file" class="form-control w-75"   name="image"   aria-describedby="fileHelpId">
-                      </div >
-                        
-                      
+                      </div>
+
                       
                       @error('product_name')
                             

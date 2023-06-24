@@ -72,20 +72,22 @@
               <!-- col.// -->
               <div class="col-md-4 col-6 mb-3">
                 <div class="form-outline">
+                  <form action="{{route('add.cart',$customer->id)}}" method="post">
+                    @csrf
                   <label class="form-label" for="typeNumber">Quantite</label>
-                  <input type="number" value="1" id="typeNumber" class="form-control" />
+                  <input type="number" value="1" id="typeNumber" name="qty" class="form-control" />
                   
           
                 </div>    
               </div> 
             <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
-            <a href="#" class="btn btn-primary shadow-0">     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+            <button type="submit" class="btn btn-primary shadow-0">     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
             </svg>
-              Add to cart </a>
+              Add to cart </button>
               </div>
             </div>
-           
+          </form>
           </div>
         </main>
       </div>

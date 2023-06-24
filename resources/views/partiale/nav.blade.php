@@ -99,8 +99,8 @@
       <!-- Right elements -->
       <div class="d-flex align-items-center">
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
-          <i class="fas fa-shopping-cart"></i> <span class="badge rounded-pill badge-notification bg-danger">{{count((array) session('cart'))}}</span>
+        <a class="text-reset me-3" href="{{route('cart.index')}}">
+          <i class="fas fa-shopping-cart"></i> <span class="badge rounded-pill badge-notification bg-danger"></span>
         </a>
   
         <!-- Notifications -->
