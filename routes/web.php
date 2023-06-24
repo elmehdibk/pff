@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\cartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
@@ -43,3 +43,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('add-to-cart/{id}', [CustomerController::class, 'addToCart'])->name('add-to-cart');
+
+Route::put('/update/{product}/cart', [cartController::class,'updateProductOnCart'])->name('update.cart');
+
+Route::post('/order', [cartController::class,'getOrder'])->name('getOrder');
