@@ -1,6 +1,6 @@
 
-@extends('layouts.master')
-@section('main')
+@extends('layouts.app')
+@section('content')
  
 
 @if(session('success'))

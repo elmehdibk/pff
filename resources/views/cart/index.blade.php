@@ -1,5 +1,5 @@
-@extends('layouts/master')
-@section('main')
+@extends('layouts.app')
+@section('content')
 @if (session()->has('success'))
 
 <div class="alert alert-success" role="alert">
