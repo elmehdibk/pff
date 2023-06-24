@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $customers=product::all();
+        return view('customer.index',compact('customers'));
     }
 
     public function adminHome()
