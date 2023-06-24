@@ -3,6 +3,7 @@
     Index
 @endsection
 @section('content')
+
 @if (session()->has('success'))
 <div class="container-sm">
     <div class="alert alert-success" role="alert">
