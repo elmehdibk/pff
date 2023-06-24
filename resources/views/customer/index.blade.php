@@ -10,7 +10,8 @@
 @endif
 
 <div class="text-center container py-5">
-      <h4 class="mt-4 mb-5"><strong>PRODUITS POPULAIRES</strong></h4>
+  @include('partiale/navbar')
+      <h4 class="mt-4 mb-5"><strong>NOUVEAUTÉS</strong></h4>
       <div class="container">
       <div class="row">
         @foreach ($customers as $product)
