@@ -3,6 +3,15 @@
     Add
 @endsection
 @section('content')
+@if (session()->has('success'))
+
+    <div class="alert alert-success" role="alert">
+        <strong>{{session('success')}}</strong>
+    </div>
+    
+    
+@endif   
+
 <div class="container auth">
   <div class="row justify-content-center">
       <div class="col-md-8">

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 
 {{-- <div class="card m-3">
@@ -22,7 +22,7 @@
         <div>
 </div> --}}
 
-@section('main')
+@section('content')
 <section class="py-5">
     <div class="container">
       <div class="row gx-5">

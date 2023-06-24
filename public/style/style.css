@@ -1,4 +1,8 @@
-#cardsSize{
+body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+/* #cardsSize{
     width:250px;
     margin: -25px;
     margin-top:5px;
@@ -6,66 +10,67 @@
     float: left;
    
     
-}
+    
+} */
 #button{
   
     display: inline-table;
-    transition:1s;
+    
    
-}
-#button:hover{
-  
-    display: inline-table;
-    transition:1s;
-    box-shadow:1px 1px 9px  red;
-   
-}
-a{
-    transition:1s;
-}
-a:hover{
-    transition:1s;
-    text-shadow:1px 1px 6px  red;
 }
 
-@media screen and (max-width: 600px){
+
+/* @media screen and (max-width: 600px){
+    body{
+        width: 120vw;
+        overflow-x: hidden;
+    }
     #cardsSize{
         width:180px;
         float: left;
-        
+
     }
     #button{
       
         margin-top:2px;
        
     }   
-}
+   
+} */
 @media screen and (max-width: 600px){
-    #cardsSize{
-        width:180px;
-       
-       
+    /* #allCards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(160px, 1fr)) ;
+        grid-gap:auto auto ;
         
+    } */
+    
+    #buttons{
+        display: block;
+        margin-bottom:2px;
     }
-    #button{
-      
-        display: inline-table;
-       
-    }   
+    #delete{
+        width: 34.4vw;
+        /* display: block; */
+    }
+    
+    
+
+
 }
 .card{
     margin-top: 60px;    
 }
-#product{
-    box-shadow:1px 1px 9px  red;
+/* #product{
+    border:1px solid red;
     width:100%;
-    transition:1s;
-}
-#product:hover{
-    width:110%;
+    transition:0.5s;
+} */
+/* #product:hover{
+    width:106%;
     margin-top: 60px;
     box-shadow:1px 1px 20px  red;
-}
+} */
 
 .alert{
     margin-top: 60px;
@@ -83,7 +88,7 @@ svg{
 #logo{
     display: inline; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow:1px 1px 6px  red;
+    text-shadow:1px 1px 6px  rgba(249, 44, 44, 0.581);
     font-weight: bold;
 }
 
@@ -91,3 +96,4 @@ svg{
     border-radius: 70%;
     box-shadow:1px 1px 9px  red;
 }
+

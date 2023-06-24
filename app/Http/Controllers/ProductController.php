@@ -10,9 +10,9 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($type=null)
     {
-        $products=product::all(); 
+        $products=product::all();
         return view('product.index',compact('products'));
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
             $formFildes['image']= $request->file('image')->store('product','public');
         }
         product::create($formFildes);
-        return to_route('products.index')->with('success','product is added');
+        return to_route('products.create')->with('success','product is added');
         
     }
 
@@ -92,8 +92,13 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(product $product)
+        public function verification(product $product){
+                return view('product.verification',compact('product'));
+        } 
+
+    public function destroy($id)
     {
+        $product=product::find($id);
         $product->delete();
         return to_route('products.index')->with('success','this product '.'"'.$product->product_name.'"'.' is deleted');
     }

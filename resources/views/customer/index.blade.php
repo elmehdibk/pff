@@ -1,5 +1,7 @@
+
 @extends('layouts.master')
-@section('main')  
+@section('main')
+ 
 
 @if(session('success'))
          <div class="alert alert-success">
@@ -7,18 +9,11 @@
          </div> 
 @endif
 
-
-
-    
-    
-
-
-
 <div class="text-center container py-5">
       <h4 class="mt-4 mb-5"><strong>PRODUITS POPULAIRES</strong></h4>
       <div class="container">
       <div class="row">
-        @foreach ($products as $product)
+        @foreach ($customers as $product)
         <div class="col-4">
           <div class="card">
             <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"

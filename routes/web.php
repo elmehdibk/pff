@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\cartController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\GainerController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,11 +20,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products',ProductController::class);
-Route::resource('gainers',GainerController::class);
+// Route::resource('products',ProductController::class);
+Route::get('/products/{type?}',[ProductController::class,'index'])->name('products.index');
+Route::get('/create',[ProductController::class,'create'])->name('products.create');
+Route::post('/products/store',[ProductController::class,'store'])->name('products.store');
+Route::get('/products/show/{product}',[ProductController::class,'show'])->name('products.show');
+Route::get('/products/{product}/edit',[ProductController::class,'edit'])->name('products.edit');
+Route::put('/products/{product}',[ProductController::class,'update'])->name('products.update');
+Route::get('/products/verification/{product}',[ProductController::class,'verification'])->name('products.verification');
+Route::get('/products/delete/{id}',[ProductController::class,'destroy'])->name('products.destroy');
+// Route::delete('/products/{product}',[ProductController::class,'destroy'])->name('products.destroy');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::resource('customers',CustomerController::class);
 Auth::routes();
 
