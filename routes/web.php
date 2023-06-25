@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// Route::resource('products',ProductController::class);
 Route::get('/products/{type?}',[ProductController::class,'index'])->name('products.index')->middleware('is_admin');
 Route::get('/create',[ProductController::class,'create'])->name('products.create')->middleware('is_admin');
 Route::post('/products/store',[ProductController::class,'store'])->name('products.store')->middleware('is_admin');
@@ -30,7 +30,7 @@ Route::get('/products/{product}/edit',[ProductController::class,'edit'])->name('
 Route::put('/products/{product}',[ProductController::class,'update'])->name('products.update')->middleware('is_admin');
 Route::get('/products/verification/{product}',[ProductController::class,'verification'])->name('products.verification')->middleware('is_admin');
 Route::get('/products/delete/{id}',[ProductController::class,'destroy'])->name('products.destroy')->middleware('is_admin');
-
+// Route::delete('/products/{product}',[ProductController::class,'destroy'])->name('products.destroy');
 
 
 Auth::routes();
