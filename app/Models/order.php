@@ -15,7 +15,9 @@ class order extends Model
             "price",
             "total",
             "paid", 
-            "delivered"
+            "delivered",
+            'adress',
+            'phone',
     ];
 
     public function user()

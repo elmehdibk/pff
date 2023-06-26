@@ -104,6 +104,10 @@ class ProductController extends Controller
                 return view('product.verification',compact('product'));
         } 
 
+        public function info(){
+            $products=product::all();
+            return view('product.info',compact('products'));
+        }
     public function destroy($id)
     {
         $product=product::find($id);

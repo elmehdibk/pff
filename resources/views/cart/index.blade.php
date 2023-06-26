@@ -18,10 +18,7 @@
   
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-            <div>
-              <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
-                    class="fas fa-angle-down mt-1"></i></a></p>
-            </div>
+            
           </div>
   @foreach ($items as $item)
                 <div class="card rounded-3 mb-4">
@@ -84,8 +81,24 @@
             </div>
           </div>
 
+
+     
+
           <form action="{{route('getOrder')}}" method="post">
-            @csrf
+            @csrf    
+             <div class="card mb-4 ">
+            <div class="card-body p-4 d-flex flex-row " >
+              <div class="form-outline flex-fill">
+                <label class='text-info' for="form1">Adress</label>
+                <input type="text" id="form1"  name="adress" required class="form-control form-control-lg border" />
+              </div>
+              <div class="form-outline flex-fill "> 
+                  <label class="text-info" for="form1">Number Phone</label>
+                <input type="text" id="form1" required name="phone" class="form-control form-control-lg border" />
+             
+              </div>
+            </div>
+          </div>
           <div class="card">
             <div class="card-body">
               <button type="submit" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>

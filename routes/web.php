@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\cartController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\orderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ Route::get('/', function () {
 
 // Route::resource('products',ProductController::class);
 Route::get('/products/{type?}',[ProductController::class,'index'])->name('products.index')->middleware('is_admin');
+Route::get('/info',[ProductController::class,'info'])->name('products.info')->middleware('is_admin');
 Route::get('/create',[ProductController::class,'create'])->name('products.create')->middleware('is_admin');
 Route::post('/products/store',[ProductController::class,'store'])->name('products.store')->middleware('is_admin');
 Route::get('/products/show/{product}',[ProductController::class,'show'])->name('products.show')->middleware('is_admin');
@@ -42,8 +44,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('add-to-cart/{id}', [CustomerController::class, 'addToCart'])->name('add-to-cart');
+Route::get('add/cart', [cartController::class, 'index'])->name('cart.index');
+Route::post('add/cart/{product}', [cartController::class, 'addProductToCart'])->name('add.cart');
+Route::delete('remove/{product}/cart', [cartController::class, 'removeProductFromCart'])->name('remove.cart');
 
 Route::put('/update/{product}/cart', [cartController::class,'updateProductOnCart'])->name('update.cart');
 
 Route::post('/order', [cartController::class,'getOrder'])->name('getOrder');
+
+//orders
+Route::get('orders/index',[orderController::class,'index'])->name('index');
+Route::put('/update/{order}', [orderController::class,'update'])->name('orders.update');
+Route::delete('/delete/{order}', [orderController::class,'destroy'])->name('orders.destroy');

@@ -1,44 +1,42 @@
-<footer class="bg-dark text-white">
-    <div class="container py-4">
-      <div class="row py-5">
-        <div class="col-md-4 mb-3 mb-md-0">
-          <h6 class="text-uppercase mb-3">Customer services</h6>
-          <ul class="list-unstyled mb-0">
-            <li><a class="footer-link" href="#!">Help &amp; Contact Us</a></li>
-            <li><a class="footer-link" href="#!">Returns &amp; Refunds</a></li>
-            <li><a class="footer-link" href="#!">Online Stores</a></li>
-            <li><a class="footer-link" href="#!">Terms &amp; Conditions</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-3 mb-md-0">
-          <h6 class="text-uppercase mb-3">Company</h6>
-          <ul class="list-unstyled mb-0">
-            <li><a class="footer-link" href="#!">What We Do</a></li>
-            <li><a class="footer-link" href="#!">Available Services</a></li>
-            <li><a class="footer-link" href="#!">Latest Posts</a></li>
-            <li><a class="footer-link" href="#!">FAQs</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h6 class="text-uppercase mb-3">Social media</h6>
-          <ul class="list-unstyled mb-0">
-            <li><a class="footer-link" href="#!">Twitter</a></li>
-            <li><a class="footer-link" href="#!">Instagram</a></li>
-            <li><a class="footer-link" href="#!">Tumblr</a></li>
-            <li><a class="footer-link" href="#!">Pinterest</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-top pt-4" style="border-color: #1d1d1d !important">
-        <div class="row">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstrapious.com/p/boutique-bootstrap-e-commerce-template">Bootstrapious</a></p>
-            <!-- If you want to remove the backlink, please purchase the Attribution-Free License. See details in readme.txt or license.txt. Thanks!-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    
+  </div>
+  <!-- Copyright -->
+</footer>

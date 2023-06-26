@@ -13,8 +13,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        $items=\Cart::getContent();
+        $count=count($items->toArray());
         $customers=product::latest()->get();
-        return view('customer.index',compact('customers'));
+        return view('customer.index',compact('customers','items','count'));
     }
 
     /**
@@ -38,7 +40,9 @@ class CustomerController extends Controller
      */
     public function show(product $customer)
     {
-        return view('customer.show',compact('customer'));
+        $items=\Cart::getContent();
+        $count=count($items->toArray());
+        return view('customer.show',compact('customer','items','count'));
     }
 
     

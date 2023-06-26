@@ -25,8 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $items=\Cart::getContent();
+        $count=count($items->toArray());
         $customers=product::all();
-        return view('customer.index',compact('customers'));
+        return view('customer.index',compact('customers','items','count'));
     }
 
     public function adminHome()

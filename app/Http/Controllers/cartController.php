@@ -11,7 +11,8 @@ class cartController extends Controller
 {
     public function index(){
         $items=\Cart::getContent();
-        return view('cart.index',compact('items'));
+        $count=count($items->toArray());
+        return view('cart.index',compact('items','count'));
     }
     public function addProductToCart(Request $request ,product $product){
 
@@ -42,7 +43,8 @@ class cartController extends Controller
         return redirect()->route("cart.index");
     }
 
-    public function getOrder(){
+    public function getOrder(Request $request){
+
         foreach (\Cart::getContent() as $item) {
             order::create([
                 "user_id" => auth()->user()->id,
@@ -50,7 +52,9 @@ class cartController extends Controller
                 "qty" => $item->quantity,
                 "price" => $item->price,
                 "total" => $item->quantity*$item->price,
-                "paid" => 0
+                "paid" => 0,
+                'adress'=>$request->adress,
+                'phone'=>$request->phone,
             ]);
             \Cart::clear();
         }
