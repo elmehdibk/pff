@@ -70,23 +70,27 @@
           @endforeach
 
       
-  
-          <div class="card mb-4">
-            <div class="card-body p-4 d-flex flex-row">
-              <div class="form-outline flex-fill">
-               
-                <b >TOTALE</b>
-              </div>
-              <b class=" ms-3">{{ Cart::getSubtotal()}}.00DH</b>
-            </div>
-          </div>
-
-
-     
-
+          
+          
+          
           <form action="{{route('getOrder')}}" method="post">
             @csrf    
+            
+                    <div class="card mb-4">
+                      <div class="card-body p-4 d-flex flex-row">
+                        <div class="form-outline flex-fill">
+                         
+                          <b >TOTALE</b>
+                        </div>
+                        <input class="border border-0" type="text" name="getTotale" value="{{ Cart::getSubtotal()}}.00DH"  id="">
+                         
+                      </div>
+                    </div>
+          
+           
+                    
              <div class="card mb-4 ">
+                    <h4 class="m-2">Information For Delivery</h4>
             <div class="card-body p-4 d-flex flex-row " >
               <div class="form-outline flex-fill">
                 <label class='text-info' for="form1">Adress</label>
@@ -111,4 +115,6 @@
       </div>
     </div>
   </section>
+
+
   @endsection

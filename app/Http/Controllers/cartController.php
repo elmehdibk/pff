@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\order;
 use App\Models\product;
+use App\Models\User;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
 class cartController extends Controller
 {
     public function index(){
+        $orders=order::orderBy('user_id')->get();
         $items=\Cart::getContent();
         $count=count($items->toArray());
-        return view('cart.index',compact('items','count'));
+        return view('cart.index',compact('items','count','orders'));
     }
     public function addProductToCart(Request $request ,product $product){
 
@@ -55,7 +57,11 @@ class cartController extends Controller
                 "paid" => 0,
                 'adress'=>$request->adress,
                 'phone'=>$request->phone,
+                'getTotale'=>$request->getTotale,
+
+            
             ]);
+            
             \Cart::clear();
         }
         return redirect()->route('cart.index')->with([

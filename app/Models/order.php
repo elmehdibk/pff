@@ -18,6 +18,7 @@ class order extends Model
             "delivered",
             'adress',
             'phone',
+            'getTotale',
     ];
 
     public function user()

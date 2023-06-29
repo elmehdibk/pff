@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\order;
 use App\Models\product;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,12 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        $orders=order::orderBy('user_id')->get();
         $items=\Cart::getContent();
         $count=count($items->toArray());
         $customers=product::latest()->get();
-        return view('customer.index',compact('customers','items','count'));
+        $New=product::latest()->take(3)->get();
+        return view('customer.index',compact('customers','items','count','orders','New'));
     }
 
     /**
@@ -40,9 +43,10 @@ class CustomerController extends Controller
      */
     public function show(product $customer)
     {
+        $orders=order::orderBy('user_id')->get();
         $items=\Cart::getContent();
         $count=count($items->toArray());
-        return view('customer.show',compact('customer','items','count'));
+        return view('customer.show',compact('customer','items','count','orders'));
     }
 
     

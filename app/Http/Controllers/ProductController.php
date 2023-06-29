@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\order;
 use App\Models\product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -20,8 +22,8 @@ class ProductController extends Controller
 
             $products=product::where('type','=', $type)->get();
         }
-        
-        return view('product.index',compact('products'));
+        $prod=count(product::all());
+        return view('product.index',compact('products','prod'));
     }
 
     /**
@@ -105,8 +107,11 @@ class ProductController extends Controller
         } 
 
         public function info(){
+            $users=count(User::all()->where('is_admin','=',0));
+            $sum=order::sum('total');
+            $orders=count(order::all());
             $products=product::all();
-            return view('product.info',compact('products'));
+            return view('product.info',compact('products','sum','users','orders'));
         }
     public function destroy($id)
     {

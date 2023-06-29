@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[CustomerController::class, 'index'])->name('customers.product');
 
 // Route::resource('products',ProductController::class);
 Route::get('/products/{type?}',[ProductController::class,'index'])->name('products.index')->middleware('is_admin');
@@ -44,15 +42,17 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('add/cart', [cartController::class, 'index'])->name('cart.index');
-Route::post('add/cart/{product}', [cartController::class, 'addProductToCart'])->name('add.cart');
-Route::delete('remove/{product}/cart', [cartController::class, 'removeProductFromCart'])->name('remove.cart');
+Route::get('add/cart', [cartController::class, 'index'])->name('cart.index')->middleware('auth');
+Route::post('add/cart/{product}', [cartController::class, 'addProductToCart'])->name('add.cart')->middleware('auth');
+Route::delete('remove/{product}/cart', [cartController::class, 'removeProductFromCart'])->name('remove.cart')->middleware('auth');
 
-Route::put('/update/{product}/cart', [cartController::class,'updateProductOnCart'])->name('update.cart');
+Route::put('/update/{product}/cart', [cartController::class,'updateProductOnCart'])->name('update.cart')->middleware('auth');
 
-Route::post('/order', [cartController::class,'getOrder'])->name('getOrder');
+Route::post('/order', [cartController::class,'getOrder'])->name('getOrder')->middleware('auth');
+Route::get('/order/delivered', [orderController::class,'Delivered'])->name('delivered')->middleware('auth');
 
 //orders
-Route::get('orders/index',[orderController::class,'index'])->name('index');
-Route::put('/update/{order}', [orderController::class,'update'])->name('orders.update');
+Route::get('orders/index',[orderController::class,'index'])->name('orders.index');
+Route::put('/updateD/{order}', [orderController::class,'updateDelivered'])->name('orders.updateD');
+Route::put('/updateP/{order}', [orderController::class,'updatePaid'])->name('orders.updateP');
 Route::delete('/delete/{order}', [orderController::class,'destroy'])->name('orders.destroy');

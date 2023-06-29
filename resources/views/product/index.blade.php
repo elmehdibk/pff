@@ -16,7 +16,10 @@
 
    
 <div class="container-sm">
-    
+    <div class="d-flex justify-content-between bg-secondary align-items-center mt-5">
+        <h3 class="fw-normal m-2 text-light ">You Have {{$prod}} Products</h3>
+        
+      </div>
         <div class="card">
             <div class="card-header">
                 <h4><i class="fa fa-filter" aria-hidden="true"></i>FILTER</h4>
