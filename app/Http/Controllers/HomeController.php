@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\order;
 use App\Models\product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,10 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $orders=order::orderBy('user_id')->get();
         $items=\Cart::getContent();
         $count=count($items->toArray());
         $customers=product::all();
-        return view('customer.index',compact('customers','items','count'));
+        $New=product::latest()->take(3)->get();
+        return view('customer.index',compact('customers','items','count','orders','New'));
     }
 
     public function adminHome()
