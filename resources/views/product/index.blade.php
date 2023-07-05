@@ -75,15 +75,7 @@
                     <td>{{$product->stock}}</td>
                     <td>{{$product->type}}</td>
                     <td><a  id="buttons" class="btn btn-light btn-sm" href="{{route('products.show',$product->id)}}" role="button"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                        {{-- <form action="{{route('products.destroy',$product->id)}}" method="post" > 
-                            @method('DELETE')
-                            @csrf
-                            
-                            <button type="submit" class="btn btn-danger btn-sm" id="delete">Delete</button>
-                        </form> --}}
-                        {{-- <a  href="{{ route('products.destroy', ['id' => $product->id]) }}" class="btn btn-light btn-sm">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </a> --}}
+
                         <a  id="buttons" class="btn btn-light btn-sm" href="{{route('products.verification',$product->id)}}"  role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         <a  id="buttons" class="btn btn-light btn-sm" href="{{route('products.edit',$product->id)}}"  role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     </td>
